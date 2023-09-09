@@ -1,27 +1,24 @@
 export const NavbarLinks = [
     {
-        title:"Home",
-        path: "/",
+        title:"About Us",
+        path: "/about",
     },
     {
-        title: "Experts",
-        path: "/experts"
+        title: "Services",
+        path: "/services"
     },
     {
-        title:"Foreign",
-        path:"/foreign"
+        title:"Businesses",
+        path:"/business"
     },
-    {
-        title:"Carriers",
-        path:"/carriers",
-    },
+   
     {
         title:"Blogs",
         path:"/blog"
     },
     {
-        title:"Contact Us ",
-        path:"/contact"
+        title:"Carriers",
+        path:"/carriers",
     }
 
 ];

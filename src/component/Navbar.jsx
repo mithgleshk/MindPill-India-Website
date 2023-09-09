@@ -3,6 +3,7 @@ import { Link, useLocation ,matchPath} from 'react-router-dom'
 import { NavbarLinks } from '../data/navbar-links'
 import logo from "../assets/hero.jpeg"
 import {IoIosArrowDropdownCircle} from "react-icons/io"
+import HighlightText from "./mindcore/HighlightText";
 const subLinks = [
     {
         title: "Home",
@@ -19,16 +20,20 @@ const Navbar = () => {
         return matchPath({path:route}, location.pathname);
     }
   return (
-    <div className='flex h-[80px] items-center  border-b-[1px] bg-richblack-900 border-b-richblack-700'>
+    <div className='flex h-[100px] items-center   bg-gradient-to-r from-white via-blue-200 to-blue-200 '>
         <div className='flex w-12/12  items-center  gap-[30px]'>
 
-      <div  className='w-[70px] h-[70px] overflow-hidden  ml-[60px] rounded-[50px]' >
+      <div  className='w-[80px] h-[80px] overflow-hidden  ml-[60px] rounded-[50px] flex flex-col' >
       <Link to="/">
         <img src={logo} width={160} height={42} alt='logophoto' loading='lazy'/>
         </Link>
+        <div className='mt-[100px]'> 
+            <h1 className='text-3xl font-bold  text-richblack-900 ' > Mind  </h1>
+            <HighlightText text={"Pill"}/> 
+        </div>
       </div>
-        <nav className='flex flex-row gap-[135px]'>
-            <ul className='flex gap-x-[60px] text-richblack-25 mt-[5px]  text-2xl'>
+        <nav className='flex flex-row gap-[120px]'>
+            <ul className='flex gap-x-[60px] text-richblack-900   text-2xl'>
                 {
                    NavbarLinks.map( (link, index) => (
                     <li key={index}>
@@ -67,7 +72,7 @@ const Navbar = () => {
    
                            ) : (
                                <Link to={link?.path}>
-                                   <p className={`${ matchRoute(link?.path) ? "text-yellow-25" : "text-richblack-25"}`}>
+                                   <p className={`${ matchRoute(link?.path) ? "text-blue-700" : "text-richblack-900"}`}>
                                        {link.title}
                                    </p>
                                    
@@ -80,20 +85,24 @@ const Navbar = () => {
                 ) )
                 }
             </ul>
-            <div className='flex flex-row gap-[90px] relative  '>
-            <div className=' ml-[90px] h-[]'>
+            <div className='flex flex-row gap-[70px] relative  '>
+            <div className=' ml-[60px] h-[20px]'>
             <Link to="/login">
-                        <button className='border max-w-maxContent border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md'>
+                      <div className='border border-richblack-700  px-[12px] py-[8px] bg-blue-400 text-white rounded-md'>
+                      <button className=''>
                             Log in
                         </button>
+                        <button >
+                            /SignUp
+                        </button>
+                      </div>
+                       
+
                     </Link>
+                   
             </div>
             <div>
-            <Link to="/signup">
-                        <button className='border border-richblack-700 bg-richblack-800 px-[12px] py-[8px] text-richblack-100 rounded-md'>
-                            SignUp
-                        </button>
-                    </Link>
+           
             </div>
             </div>
         </nav>
